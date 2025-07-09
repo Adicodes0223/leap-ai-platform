@@ -1,0 +1,25 @@
+{
+  "name": "leap-ai-platform",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@google/genai": "^1.8.0",
+    "react-is": "^18.3.1",
+    "recharts": "^2.12.7",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0",
+    "typescript": "~5.7.2",
+    "@types/node": "^22.14.0"
+  }
+}

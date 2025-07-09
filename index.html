@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEAP: AI Project Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // Enable class-based dark mode
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-teal': '0 0 20px 0px rgba(45, 212, 191, 0.5)',
+            'glow-cyan': '0 0 20px 0px rgba(34, 211, 238, 0.5)',
+            'glow-blue': '0 0 20px 0px rgba(59, 130, 246, 0.5)',
+            'glow-white': '0 0 25px 0px rgba(255, 255, 255, 0.1)',
+            'border-glow-cyan': '0 0 12px 1px rgba(34, 211, 238, 0.5)',
+            'border-glow-green': '0 0 12px 1px rgba(74, 222, 128, 0.5)',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out forwards',
+            'slide-up': 'slideUp 0.5s ease-out forwards',
+            'zoom-in': 'zoomIn 0.5s ease-out forwards',
+            'bounce-horizontal': 'bounce-horizontal 2s infinite',
+            'slide-in-right': 'slideInRight 0.5s ease-out forwards',
+            'fade-out': 'fadeOut 0.5s ease-in forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(10px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+            slideUp: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+            zoomIn: {
+              '0%': { opacity: 0, transform: 'scale(0.97)' },
+              '100%': { opacity: 1, transform: 'scale(1)' },
+            },
+            'bounce-horizontal': {
+              '0%, 100%': { transform: 'translateX(-15%)', 'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)' },
+              '50%': { transform: 'translateX(0)', 'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)' },
+            },
+            slideInRight: {
+              '0%': { transform: 'translateX(110%)', opacity: 0 },
+              '100%': { transform: 'translateX(0)', opacity: 1 },
+            },
+            fadeOut: {
+                '0%': { transform: 'translateX(0)', opacity: 1 },
+                '100%': { transform: 'translateX(110%)', opacity: 0 },
+            }
+          }
+        }
+      }
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.8.0",
+    "react-is": "https://esm.sh/react-is@18.3.1",
+    "recharts": "https://esm.sh/recharts@2.12.7",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "react/": "https://esm.sh/react@18.3.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 font-sans transition-colors duration-300">
+  <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden bg-slate-50 dark:bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#130a21]">
+    <div class="absolute top-[-20%] left-[-20%] w-[50vw] h-[50vw] bg-purple-500/5 dark:bg-purple-600/20 rounded-full blur-[150px] transition-all duration-500"></div>
+    <div class="absolute bottom-[-20%] right-[-20%] w-[50vw] h-[50vw] bg-cyan-500/5 dark:bg-cyan-600/20 rounded-full blur-[150px] transition-all duration-500"></div>
+  </div>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
